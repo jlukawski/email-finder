@@ -70,10 +70,9 @@
         <configuration>
           <finalName>email-finder</finalName>
           <appendAssemblyId>false</appendAssemblyId>
-          <descriptorRefs>
-            <descriptorRef>src</descriptorRef>
-            <descriptorRef>src/assembly/assembly.xml</descriptorRef>
-          </descriptorRefs>
+          <descriptors>
+            <descriptor>src/assembly/assembly.xml</descriptor>
+          </descriptors>
           <archive>
             <manifest>
               <mainClass>edu.depaul.email.EmailFinder</mainClass>
@@ -93,7 +92,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.2</version>
+        <version>0.8.4</version>
         <executions>
           <execution>
             <goals>
