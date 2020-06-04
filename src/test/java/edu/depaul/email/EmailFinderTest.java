@@ -6,12 +6,15 @@ package edu.depaul.email;
 import edu.depaul.email.EmailFinder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.Rule;
+import org.junit.rules.Timeout;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EmailFinderTest {
 
-//Testing emailFinder() function
+	@Rule
+	public Timeout globalTimeout = Timeout.millis(20000);
 
 	@Test
 	@DisplayName("valid url")
@@ -33,7 +36,6 @@ public class EmailFinderTest {
 			assert(false);
 		}
 	}
-
 	@Test
 	@DisplayName("invalid url")
 	void testEmailFinderInvalidURL() {
