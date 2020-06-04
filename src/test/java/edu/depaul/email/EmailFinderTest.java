@@ -43,6 +43,13 @@ public class EmailFinderTest {
 		EmailFinder finder = new EmailFinder();
 		assertDoesNotThrow(() -> finder.run(url));
 	}
+	@Test
+	@DisplayName("no starting url")
+	void testEmailFinderNoURL() {
+		String[] url = {};
+		EmailFinder finder = new EmailFinder();
+		assertDoesNotThrow(() -> finder.run(url));
+	}
 
 
 
