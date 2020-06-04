@@ -1,4 +1,4 @@
-
+package edu.depaul.email;
 /*
  * Author: Jake Lukawski
  */
@@ -14,14 +14,34 @@ public class EmailFinderTest {
 //Testing emailFinder() function
 
 	@Test
-	@DisplayName("blank args")
-	void testNoExceptionsThrown() {
+	@DisplayName("valid url")
+	void testEmailFinderValidURL() {
 		try{
-			EmailFinder.main(new String[] {"http://www.depaul.edu", "3"});
+			EmailFinder.main(new String[] {"http://www.depaul.edu"});
 		}
 		catch(Exception e) {
 			assert(false);
 		}
+	}
+	@Test
+	@DisplayName("valid url with args")
+	void testEmailFinderValidURLAndArgs() {
+		try{
+			EmailFinder.main(new String[] {"http://www.depaul.edu","2"});
+		}
+		catch(Exception e) {
+			assert(false);
+		}
+	}
+
+	@Test
+	@DisplayName("invalid url")
+	void testEmailFinderInvalidURL() {
+		String[] url = {"abcdefg"};
+		EmailFinder finder = new EmailFinder();
+		assertDoesNotThrow(() -> finder.run(url));
+	}
+
+
 
 	}
-}
